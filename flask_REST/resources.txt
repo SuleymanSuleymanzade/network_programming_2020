@@ -1,0 +1,33 @@
+Game Store use cases  
+	1) Add game
+	2) Remove game 
+	3) Search game
+	4) Update the game
+
+
+**Games
+
+POST          localserver/game_ops/                         adding the game
+PUT			  localserver/game_ops/<string: title>   update the game   
+DELETE        localserver/game_ops/<string: title>   delete the game
+GET           localserver/game_ops/<string: title>   get the game 
+
+
+
+
+Client 1--Deals----* Games
+
+
+
+**Client who buy the gmae 
+ 
+POST         localserver/user_ops/  adding the user
+PUT          localserver/user_ops/  adding the user
+DELETE
+GET
+
+**Deals
+
+
+GET             localserver/deals/<int: clientname>/<int: clientsurname>
+PUT				localserver/deals/<int: clientname>/<int: clientsurname>
