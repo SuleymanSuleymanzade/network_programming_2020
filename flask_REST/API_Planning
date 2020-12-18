@@ -1,0 +1,92 @@
+#books: Title, Author, location
+#1) Template 
+
+Books{
+ id:{
+  Title: string
+  Author:{name:string, sname: string}
+  location:{room:string, bookshelf: string} 
+ } 
+}
+
+#2) Use-Cases
+
+1. Location of the book based on title
+2. Book list with regarding to author
+
+#3) Paths RESTful API
+
+          GET, POST, DELETE, PUT
+
+
+scenario: get the book data based on the title
+GET  server/book/title
+
+response: {
+  Author:{name:string, sname: string}
+  location:{room:string, bookshelf: string} 
+} 
+
+
+scnario: get all the books by the author
+GET  server/book/author
+
+response: List[{
+  Title: String	
+  location:{room:string, bookshelf: string} 
+} ]
+
+--------------------------------------------------------
+
+scenario: add the new book
+POST  server/book/
+body: 
+{
+  Title: string
+  Author:{name:string, sname: string}
+  location:{room:string, bookshelf: string}
+  token: fgrjagvbjadfklgvbjdl
+}
+
+response: {body, code: 201}
+
+---------------------------------------------------------
+scenario: update the book
+PUT sever/book/title
+
+body:{  #only the dictionary to update
+  Title: string,
+  Author:{name:string, sname: string},
+  location:{room:string, bookshelf: string},
+  token: fgrjagvbjadfklgvbjdl,
+}
+
+response: {new_body, code: 202}
+
+---------------------------------------------------------
+scenario: delete the book
+DELETE sever/book/title
+
+response: {code: 204}
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+
